@@ -12,10 +12,24 @@ public class ArrayNilai02 {
         }
 
         for (int i = 0; i < nilaiAkhir.length; i++) {
-            if (nilaiAkhir[i] > 70) {
-                System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (LULUS)");
+            String status = (nilaiAkhir[i] > 70) ? "LULUS" : "TIDAK LULUS";
+            System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (" + status + ")");
+        }
+
+        int jumlahLulus = 0;
+        int jumlahTidakLulus = 0;
+        for (int nilai : nilaiAkhir) {
+            if (nilai > 70) {
+                jumlahLulus++;
+            } else {
+                jumlahTidakLulus++;
             }
         }
+        System.out.println();
+        System.out.println("--- Pertanyaan 4: rekap ---");
+        System.out.println("Jumlah mahasiswa LULUS       : " + jumlahLulus);
+        System.out.println("Jumlah mahasiswa TIDAK LULUS : " + jumlahTidakLulus);
+
         input.close();
     }
 }
